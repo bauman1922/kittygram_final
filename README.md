@@ -83,7 +83,7 @@ sudo nginx -t
 ```
 sudo service nginx reload
 ```
-- Для адаптации проекта к Github Actions, добавить секреты в соответствующий разде репозитория: 
+- Для адаптации проекта к Github Actions, добавить секреты в соответствующий раздел репозитория: 
 ```
 DOCKER_USERNAME                # имя пользователя в DockerHub
 DOCKER_PASSWORD                # пароль пользователя в DockerHub
