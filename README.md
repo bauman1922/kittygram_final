@@ -97,6 +97,3 @@ TELEGRAM_TOKEN                 # токен вашего бота (получи�
 ```
 ##### Автор
 * [Sergey Samorukov](https://github.com/bauman1922)
-
-
-
