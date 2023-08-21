@@ -4,15 +4,17 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv()
-
 SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
-
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = re.split(r'\s*,\s*', os.getenv('ALLOWED_HOSTS', default='localhost'))
+
+ALLOWED_HOSTS_STRING = os.getenv('ALLOWED_HOSTS', default='localhost')
+ALLOWED_HOSTS = re.split(r'\s*,\s*', ALLOWED_HOSTS_STRING)
 if not ALLOWED_HOSTS:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
