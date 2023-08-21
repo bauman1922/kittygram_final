@@ -2,8 +2,6 @@ FROM python:3.9
 
 WORKDIR /app
 
-ENV ENV_FILE .env
-
 COPY requirements.txt .
 
 RUN pip install -r requirements.txt --no-cache-dir
