@@ -1,18 +1,17 @@
 import os
-import re
 from pathlib import Path
 
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv()
+load_dotenv(os.getenv("ENV_FILE"))
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = re.split(r'\s*,\s*', os.getenv('ALLOWED_HOSTS', default='*'))
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 
 INSTALLED_APPS = [
