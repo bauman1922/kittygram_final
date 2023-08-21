@@ -1,4 +1,5 @@
 import os
+import re
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -11,8 +12,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
-ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS if host.strip()]
+ALLOWED_HOSTS = re.split(r'\s*,\s*', os.getenv('ALLOWED_HOSTS', default='*'))
 
 
 INSTALLED_APPS = [
