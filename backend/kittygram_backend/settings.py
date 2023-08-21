@@ -12,7 +12,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = re.split(r'\s*,\s*', os.getenv('ALLOWED_HOSTS', default='*'))
+ALLOWED_HOSTS = ['158.160.31.142', '127.0.0.1', 'localhost', 'red-white.hopto.org']
 
 
 INSTALLED_APPS = [
